@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hover of Lies - Bab 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rahmat: '#f87171', // warna merah drama
+            techdark: '#1e293b', // biru gelap teknologi
+            misteri: '#64748b' // abu misterius
+          },
+          fontFamily: {
+            comic: ['"Comic Neue"', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Comic Neue', cursive;
+    }
+  </style>
+</head>
+<body class="bg-misteri text-white min-h-screen flex flex-col">
+  <header class="bg-techdark p-6 text-center shadow-md">
+    <h1 class="text-3xl font-bold text-rahmat">The Hover of Lies</h1>
+    <p class="text-sm text-gray-300 italic">Bab 1: Kode yang Tak Pernah Terbang</p>
+  </header>
+
+  <main class="flex-grow px-6 py-10 max-w-3xl mx-auto">
+    <div class="space-y-6">
+      <p>
+        Rahmat menatap monitor dengan keyakinan penuh. Barisan kode di <code>index.php</code> sudah diperbaiki. Warnanya lebih terang, tombolnya lebih hoverable, dan hidupnya seolah lebih bermakna. Ia menekan <span class="text-yellow-300">Ctrl + S</span> lalu dengan bangga berkata:
+      </p>
+      <blockquote class="border-l-4 border-rahmat pl-4 italic text-rahmat">
+        "Sudah, sekarang pasti tampilannya berubah..." katanya, tak tahu bahwa malapetaka telah dimulai.
+      </blockquote>
+
+      <p>
+        Di balik layar, <strong>VS Code</strong> tersenyum licik. "Sudah kusimpan... <em>di hatimu saja</em>, bukan di servermu," bisiknya.
+      </p>
+
+      <p>
+        <strong>File Manager</strong> muncul bak detektif tua, memeriksa direktori <code>/home/hrosace/</code>.
+        Ia mengangkat alis: "Mana file <code>index.php</code> yang terbaru? Ini masih versi jadul, Bro."
+      </p>
+
+      <p>
+        <strong>Cmd</strong> yang mendengar kabar itu langsung teriak: <span class="text-yellow-400">"dir /s index.php"</span> tapi tak menemukan bukti kuat. Semua hanya bayangan.
+      </p>
+
+      <p>
+        Di pojok ruangan, <strong>Cache</strong> tertawa sambil merokok. "Lihat? Semua percaya padaku. Mereka takkan pernah tahu file lama masih kupajang di browser."
+      </p>
+
+      <p>
+        Rahmat mulai curiga. Ditatapnya browser. Dihover-nya tombol yang harusnya berubah warna. Tidak ada yang terjadi. Cuma efek placebo.
+      </p>
+
+      <p class="font-bold text-rahmat">To be continued...</p>
+      <button onclick="nextChapter()" class="bg-rahmat px-4 py-2 rounded hover:bg-red-600 transition">Lanjut ke Bab 2</button>
+    </div>
+  </main>
+
+  <footer class="bg-techdark text-center text-sm py-4">
+    Dibuat penuh dusta dan cinta oleh Rahmat • Hosted on <a href="https://github.io" class="text-blue-300 hover:underline">GitHub Pages</a>
+  </footer>
+
+  <script>
+    function nextChapter() {
+      alert('Belum ditulis, santai dulu 😎');
+    }
+  </script>
+</body>
+</html>
