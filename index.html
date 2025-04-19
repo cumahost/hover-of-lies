@@ -97,32 +97,60 @@
       </div>
     </div>
   </main>
-
-  <footer class="bg-rahmat text-center text-sm py-4 text-white">
-    Dibuat penuh dusta dan cinta oleh Rahmat • <a href="https://cumahost.github.io/hover-of-lies" class="underline">GitHub Pages</a>
-  </footer>
-
-  <script>
-    function nextChapter() {
-      document.getElementById('chapter1').style.display = 'none';
-      document.getElementById('chapter2').classList.remove('hidden-section');
-      document.getElementById('chapter2').classList.add('fade-in');
-    }
-    function backToChapter1() {
-      document.getElementById('chapter2').style.display = 'none';
-      document.getElementById('chapter1').classList.remove('hidden-section');
-      document.getElementById('chapter1').classList.add('fade-in');
-    }
-    function nextChapter3() {
-      document.getElementById('chapter2').style.display = 'none';
-      document.getElementById('chapter3').classList.remove('hidden-section');
-      document.getElementById('chapter3').classList.add('fade-in');
-    }
-    function backToChapter2() {
-      document.getElementById('chapter3').style.display = 'none';
-      document.getElementById('chapter2').classList.remove('hidden-section');
-      document.getElementById('chapter2').classList.add('fade-in');
-    }
-  </script>
-</body>
-</html>
+    <!-- Bab 4 -->
+    <div id="chapter4" class="hidden-section space-y-6">
+        <h2 class="text-xl font-semibold text-rahmat">Bab 4: Terminal yang Melankolis</h2>
+        <p>Malam itu sunyi. Terminal hitam dengan teks hijau berkedip pelan. Rahmat duduk diam. Perintah terakhirnya masih menggantung di layar: <code>npm run build</code>.</p>
+        <p>Tak ada respons. Hanya cursor yang berkedip. Seolah terminal sedang berpikir... atau mungkin sedang menangis.</p>
+        <p><strong>Terminal</strong> bukan hanya alat. Ia sahabat. Tempat Rahmat mencurahkan semua instruksi. Tapi malam ini, Terminal seperti... enggan membalas.</p>
+        <p>"Kenapa kamu diam saja?" bisik Rahmat. Tangannya dingin. Di balik layar, proses membeku. Bukan karena error, tapi karena... kebimbangan.</p>
+        <blockquote class="border-l-4 border-gray-500 pl-4 italic text-cachegray">
+          "Kamu ingin aku jalan, tapi kamu belum install dependency-mu, Rahmat..."
+        </blockquote>
+        <p>Rahmat tersentak. Ia lupa. Ia terlalu berharap bisa membangun tanpa fondasi.</p>
+        <p>Lalu datanglah pesan itu, seperti nyanyian hantu dalam gelap:</p>
+        <pre class="bg-gray-800 text-green-400 p-4 rounded"><code>ERR! Cannot find module 'vite'</code></pre>
+        <p>Terminal telah bicara. Dalam diamnya, ia mengingatkan bahwa bahkan teknologi pun butuh perhatian. Dan dependency tak bisa diabaikan.</p>
+        <p>Rahmat menunduk. Mengetik perlahan: <code>npm install</code>. Dan malam pun kembali hidup.</p>
+        <p>To be continued...</p>
+        <div class="flex gap-2">
+          <button onclick="backToChapter3()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">⬅ Kembali ke Bab 3</button>
+          <button class="bg-gray-500 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed">Bab Selanjutnya ➡</button>
+        </div>
+      </div>
+    </main>
+  
+    <footer class="bg-rahmat text-center text-sm py-4 text-white">
+      Dibuat penuh dusta dan cinta oleh Rahmat • <a href="https://cumahost.github.io/hover-of-lies" class="underline">GitHub Pages</a>
+    </footer>
+  
+    <script>
+      function nextChapter() {
+        document.getElementById('chapter1').style.display = 'none';
+        document.getElementById('chapter2').classList.remove('hidden-section');
+        document.getElementById('chapter2').classList.add('fade-in');
+      }
+      function backToChapter1() {
+        document.getElementById('chapter2').style.display = 'none';
+        document.getElementById('chapter3').style.display = 'none';
+        document.getElementById('chapter1').classList.remove('hidden-section');
+        document.getElementById('chapter1').classList.add('fade-in');
+      }
+      function nextChapter3() {
+        document.getElementById('chapter2').style.display = 'none';
+        document.getElementById('chapter3').classList.remove('hidden-section');
+        document.getElementById('chapter3').classList.add('fade-in');
+      }
+      function backToChapter2() {
+        document.getElementById('chapter3').style.display = 'none';
+        document.getElementById('chapter2').classList.remove('hidden-section');
+        document.getElementById('chapter2').classList.add('fade-in');
+      }
+      function backToChapter3() {
+        document.getElementById('chapter4').style.display = 'none';
+        document.getElementById('chapter3').classList.remove('hidden-section');
+        document.getElementById('chapter3').classList.add('fade-in');
+      }
+    </script>
+  </body>
+  </html>
