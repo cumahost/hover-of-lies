@@ -35,6 +35,14 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .ascii-art {
+      font-family: monospace;
+      white-space: pre;
+      color: #6ee7b7;
+      background: #111827;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
   </style>
 </head>
 <body class="bg-techdark text-gray-100 min-h-screen flex flex-col">
@@ -43,114 +51,91 @@
     <p class="text-sm italic text-gray-300">Sebuah Novel Interaktif Teknologi dan Satire Kehidupan</p>
   </header>
 
-  <main class="flex-grow px-6 py-10 max-w-3xl mx-auto">
-    <!-- Bab 1 -->
-    <div id="chapter1" class="space-y-6">
-      <h2 class="text-xl font-semibold text-rahmat">Bab 1: Kode yang Tak Pernah Terbang</h2>
-      <p>Pagi itu cerah. Tapi di dalam folder project, badai sedang menanti. Rahmat baru saja menyimpan perubahan di <code>index.php</code>. Rasanya sudah mantap. Grid rapi, warna cerah, hover menyala. Tapi kenapa... begitu dibuka di browser, tampilannya seperti... kemarin?</p>
-      <p><strong>VS Code</strong> tampak diam, tapi licik. "Sudah kusimpan," bisiknya. "Tapi hanya di sistem lokalmu..."</p>
-      <p><strong>File Manager</strong> muncul seperti polisi datang tanpa dipanggil. "Saya tidak menemukan file terbaru, Pak. Ini yang terakhir diubah dua hari lalu."</p>
-      <p><strong>Cmd</strong> masuk ke TKP. "dir /s index.php" katanya, penuh semangat. Tapi nihil.</p>
-      <p>Lalu, <strong>Cache</strong> datang... menyelinap lewat tab browser. Ia merokok. Bukan tembakau. Tapi history, session, dan localStorage yang tak pernah lupa.</p>
-      <blockquote class="border-l-4 border-gray-500 pl-4 italic text-cachegray">
-        "Mereka semua percaya padaku. Bahkan kamu. Kamu lihat halaman lama bukan karena kode salah. Tapi karena akulah yang membekukan waktumu."
-      </blockquote>
-      <p>Rahmat menatap langit browser. Hujan tak turun. Tapi tombol hover tidak berubah. Efeknya menghilang. Seperti janji deploy otomatis yang tak pernah terjadi.</p>
-      <p>Ia mengetik perlahan, dengan hati penuh harap: <code>git push origin main</code>. Tapi tak kunjung berubah.</p>
-      <p>To be continued...</p>
-      <div class="flex gap-2">
-        <button class="bg-gray-600 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed">⬅ Bab Sebelumnya</button>
-        <button onclick="nextChapter()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Bab Selanjutnya ➡</button>
-      </div>
+  <main class="flex-grow px-6 py-10 max-w-3xl mx-auto space-y-8">
+    <div class="text-center text-lg italic text-yellow-300">🎉 Bab 1–5 berhasil digabung ulang. Navigasi aktif. Hover aman.</div>
+    <div class="text-center">Klik tombol di bawah untuk mulai membaca!</div>
+    <div class="text-center">
+      <button onclick="showChapter(1)" class="bg-rahmat px-4 py-2 text-white rounded hover:bg-gray-600 transition">📖 Mulai dari Bab 1</button>
     </div>
-
-    <!-- Bab 2 -->
-    <div id="chapter2" class="hidden-section space-y-6">
-      <h2 class="text-xl font-semibold text-rahmat">Bab 2: Cache yang Merokok di Tengah Malam</h2>
-      <p>Cache duduk di ujung tab browser, menyala pelan seperti kenangan lama. Ia tahu semua orang akan menyalahkan hosting, repo, bahkan DNS. Tapi tidak dia. Ia hanya menyimpan.</p>
-      <p>"Kamu boleh edit beribu-ribu kali, Rahmat," katanya. "Tapi kalau kamu tak menekan <code>Ctrl + F5</code>... dunia takkan berubah."</p>
-      <p>VS Code mengirim sinyal ke terminal, GitHub Pages sudah update. Tapi Chrome? Tidak semudah itu, Ferguso.</p>
-      <p>File <code>.bat</code> sudah dihapus. Git sudah damai. Tapi Cache masih hidup. Di pojok kanan atas browsermu.</p>
-      <p>To be continued...</p>
-      <div class="flex gap-2">
-        <button onclick="backToChapter1()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">⬅ Kembali ke Bab 1</button>
-        <button onclick="nextChapter3()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Bab Selanjutnya ➡</button>
-      </div>
-    </div>
-
-    <!-- Bab 3 -->
-    <div id="chapter3" class="hidden-section space-y-6">
-      <h2 class="text-xl font-semibold text-rahmat">Bab 3: Git yang Posesif</h2>
-      <p>Git bukan hanya sistem kontrol versi. Dia seperti pacar lama yang posesif. Selalu ingat apa yang sudah kamu commit. Tapi selalu curiga saat kamu mencoba push tanpa status bersih.</p>
-      <p>"Rahmat," katanya dengan nada log, "ada perubahan yang belum kamu stage."</p>
-      <p><code>git status</code> pun bicara, menumpahkan seluruh isi hatinya. File modified, file untracked, dan satu folder node_modules yang tidak pernah diinginkan siapa pun.</p>
-      <p>Rahmat menenangkan diri. Ia ketik perlahan: <code>git add .</code> lalu <code>git commit -m "aku cuma benerin dikit kok"</code>.</p>
-      <p>Git mendengus, tapi mengizinkan. Lalu saat push... muncul pesan:</p>
-      <blockquote class="border-l-4 border-gray-400 pl-4 italic text-cachegray">
-        "rejected: failed to push some refs to origin. Please pull first."
-      </blockquote>
-      <p>Git menatap dengan mata merahnya. Ia tidak akan membiarkan perubahan masuk tanpa kamu memahami sejarah yang telah terjadi di server. Ia posesif. Tapi sebenarnya dia hanya takut kehilangan konteks.</p>
-      <p>To be continued...</p>
-      <div class="flex gap-2">
-        <button onclick="backToChapter2()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">⬅ Kembali ke Bab 2</button>
-        <button class="bg-gray-500 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed">Bab Selanjutnya ➡</button>
-      </div>
-    </div>
+    <div id="content"></div>
   </main>
-    <!-- Bab 4 -->
-    <div id="chapter4" class="hidden-section space-y-6">
-        <h2 class="text-xl font-semibold text-rahmat">Bab 4: Terminal yang Melankolis</h2>
-        <p>Malam itu sunyi. Terminal hitam dengan teks hijau berkedip pelan. Rahmat duduk diam. Perintah terakhirnya masih menggantung di layar: <code>npm run build</code>.</p>
-        <p>Tak ada respons. Hanya cursor yang berkedip. Seolah terminal sedang berpikir... atau mungkin sedang menangis.</p>
-        <p><strong>Terminal</strong> bukan hanya alat. Ia sahabat. Tempat Rahmat mencurahkan semua instruksi. Tapi malam ini, Terminal seperti... enggan membalas.</p>
-        <p>"Kenapa kamu diam saja?" bisik Rahmat. Tangannya dingin. Di balik layar, proses membeku. Bukan karena error, tapi karena... kebimbangan.</p>
-        <blockquote class="border-l-4 border-gray-500 pl-4 italic text-cachegray">
-          "Kamu ingin aku jalan, tapi kamu belum install dependency-mu, Rahmat..."
-        </blockquote>
-        <p>Rahmat tersentak. Ia lupa. Ia terlalu berharap bisa membangun tanpa fondasi.</p>
-        <p>Lalu datanglah pesan itu, seperti nyanyian hantu dalam gelap:</p>
-        <pre class="bg-gray-800 text-green-400 p-4 rounded"><code>ERR! Cannot find module 'vite'</code></pre>
-        <p>Terminal telah bicara. Dalam diamnya, ia mengingatkan bahwa bahkan teknologi pun butuh perhatian. Dan dependency tak bisa diabaikan.</p>
-        <p>Rahmat menunduk. Mengetik perlahan: <code>npm install</code>. Dan malam pun kembali hidup.</p>
-        <p>To be continued...</p>
-        <div class="flex gap-2">
-          <button onclick="backToChapter3()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">⬅ Kembali ke Bab 3</button>
-          <button class="bg-gray-500 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed">Bab Selanjutnya ➡</button>
-        </div>
+
+  <footer class="bg-rahmat text-center text-sm py-4 text-white">
+    Dibuat penuh dusta dan cinta oleh Rahmat • <a href="https://cumahost.github.io/hover-of-lies" class="underline">GitHub Pages</a>
+  </footer>
+
+  <script>
+    const chapters = [
+      `<!-- Bab 1 -->
+      <h2 class="text-xl font-semibold text-rahmat">Bab 1: Kode yang Tak Pernah Terbang</h2>
+      <p>Rahmat menatap monitor dengan keyakinan penuh...</p>
+      <p><em>VS Code</em> tersenyum. "Sudah kusimpan... tapi hanya di sistem lokalmu."</p>
+      <p>File Manager bingung. Cmd panik. Cache tertawa.</p>
+      <p class="font-bold text-rahmat">To be continued...</p>`,
+
+      `<!-- Bab 2 -->
+      <h2 class="text-xl font-semibold text-rahmat">Bab 2: Cache yang Merokok di Tengah Malam</h2>
+      <p>Cache duduk di pojok layar browser, rokok localStorage masih menyala.</p>
+      <p>"Kamu belum tekan Ctrl+F5, kan?" ujarnya licik.</p>
+      <p>Chrome tak berubah, meski push sukses.</p>
+      <p class="font-bold">To be continued...</p>`,
+
+      `<!-- Bab 3 -->
+      <h2 class="text-xl font-semibold text-rahmat">Bab 3: Git yang Posesif</h2>
+      <p>Git selalu ingat masa lalu. Commit yang belum kamu stage, selalu disebut-sebut.</p>
+      <p><code>git status</code> muncul seperti mantan yang belum move on.</p>
+      <blockquote class="border-l-4 border-gray-400 pl-4 italic text-cachegray">
+        "rejected: failed to push some refs. Please pull first."
+      </blockquote>
+      <p>To be continued...</p>`,
+
+      `<!-- Bab 4 -->
+      <h2 class="text-xl font-semibold text-rahmat">Bab 4: Terminal yang Melankolis</h2>
+      <p>Terminal berkedip sendu. Perintah terakhir masih menggantung: <code>npm run build</code>.</p>
+      <p>Tapi yang muncul malah:</p>
+      <pre class="ascii-art">ERR! Cannot find module 'vite'</pre>
+      <p>Terminal pun menangis, diam-diam.</p>
+      <p>To be continued...</p>`,
+
+      `<!-- Bab 5 -->
+      <h2 class="text-xl font-semibold text-rahmat">Bab 5: Branch yang Suka Membelot</h2>
+      <p>Branch <code>feature/navbar-hover</code> muncul tiba-tiba. Commit log misterius. Konflik pun muncul.</p>
+      <div class="ascii-art">
+<<<<<<< HEAD
+.button { color: pink; }
+=======
+.button { color: red; }
+>>>>>>> feature/navbar-hover
       </div>
-    </main>
-  
-    <footer class="bg-rahmat text-center text-sm py-4 text-white">
-      Dibuat penuh dusta dan cinta oleh Rahmat • <a href="https://cumahost.github.io/hover-of-lies" class="underline">GitHub Pages</a>
-    </footer>
-  
-    <script>
-      function nextChapter() {
-        document.getElementById('chapter1').style.display = 'none';
-        document.getElementById('chapter2').classList.remove('hidden-section');
-        document.getElementById('chapter2').classList.add('fade-in');
+      <p>Terminal menangis. Merge gagal.</p>
+      <p>To be continued...</p>`
+    ];
+
+    let currentChapter = 0;
+
+    function showChapter(index) {
+      currentChapter = index - 1;
+      const contentDiv = document.getElementById("content");
+      contentDiv.classList.add("fade-in");
+      contentDiv.innerHTML = `
+        <div class="space-y-4">${chapters[currentChapter]}</div>
+        <div class="flex gap-4 justify-between mt-6">
+          <button onclick="prevChapter()" ${index === 1 ? 'disabled class="opacity-50 cursor-not-allowed px-4 py-2 rounded bg-gray-600 text-white"' : 'class="px-4 py-2 rounded bg-rahmat text-white hover:bg-gray-600"'}>⬅ Sebelumnya</button>
+          <button onclick="nextChapter()" ${index === chapters.length ? 'disabled class="opacity-50 cursor-not-allowed px-4 py-2 rounded bg-gray-600 text-white"' : 'class="px-4 py-2 rounded bg-rahmat text-white hover:bg-gray-600"'}>Selanjutnya ➡</button>
+        </div>`;
+    }
+
+    function nextChapter() {
+      if (currentChapter < chapters.length - 1) {
+        showChapter(currentChapter + 2);
       }
-      function backToChapter1() {
-        document.getElementById('chapter2').style.display = 'none';
-        document.getElementById('chapter3').style.display = 'none';
-        document.getElementById('chapter1').classList.remove('hidden-section');
-        document.getElementById('chapter1').classList.add('fade-in');
+    }
+
+    function prevChapter() {
+      if (currentChapter > 0) {
+        showChapter(currentChapter);
       }
-      function nextChapter3() {
-        document.getElementById('chapter2').style.display = 'none';
-        document.getElementById('chapter3').classList.remove('hidden-section');
-        document.getElementById('chapter3').classList.add('fade-in');
-      }
-      function backToChapter2() {
-        document.getElementById('chapter3').style.display = 'none';
-        document.getElementById('chapter2').classList.remove('hidden-section');
-        document.getElementById('chapter2').classList.add('fade-in');
-      }
-      function backToChapter3() {
-        document.getElementById('chapter4').style.display = 'none';
-        document.getElementById('chapter3').classList.remove('hidden-section');
-        document.getElementById('chapter3').classList.add('fade-in');
-      }
-    </script>
-  </body>
-  </html>
+    }
+  </script>
+</body>
+</html>
